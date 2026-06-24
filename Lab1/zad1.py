@@ -1,7 +1,7 @@
 # 1. Napisz funkcję, która przyjmuje tablicę liczb i zwraca drugi największy element
 
 def drugi_max(arr):
-    """Funkcja przyjmuje tablicę  liuczb i zwraca drugi max element
+    """Funkcja przyjmuje tablicę  liczb i zwraca drugi max element
     Parametry: arr - lista
     Funkcja zwraca: int/float drugi największy element
 
@@ -20,21 +20,23 @@ def drugi_max(arr):
     max1 = float("-inf")
     max2 = float("-inf")
 
-    # max3 = float("-inf")
-
     for x in arr:
         if x > max1:
             max2 = max1
-            max1 = max2
+            max1 = x
         elif max1 > x > max2:
             max2 = x
 
-     if max2 == float("-inf"):
-         raise ValueError("Brak drugiego najwiekszego elemantu")
-     return max2
+    if max2 == float("-inf"):
+        raise ValueError("Brak drugiego największego elementu")
+
+    return max2
+
 
 if __name__ == '__main__':
-    print(drugi_max([1, 2, 3, 4, 5]))
+    print(drugi_max([1, 2, 3, 4, 5]))  # 4
+    print(drugi_max([5, 4, 3]))  # 4
+    print(drugi_max([5, 5, 5]))  # wyjątek
 
 
 
